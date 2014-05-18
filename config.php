@@ -1,18 +1,21 @@
 <?php
 
-// Change this.
-define('BASE_URL', 'http://vista.bananabox.biz/media');
+class Config {
 
-// What file extensions do you want to look for?
-// Files must be tagged and cannot have spaces in the name.
-$validExtensions = array('mp3');
+	static $webRoot 	= "http://vista.bananabox.biz/media/files/";
+	static $mediaDir 	= "/files/";
+	static $cacheDir 	= "/cache/";
 
-// Names of your playlists, without the .PHP at the end.
-// See playlists/example.php for an example.
-// Must correspond with your jukebox's playlists list.
-$playlists = array(
-	'bar',  // Bar-specific shit.
-	'jazz',
-	'rock',
-	'emagged'
-);
+	public static function getWebRoot() {
+		return self::$webRoot;
+	}
+
+	public static function getMediaDir() {
+		return getcwd().self::$mediaDir;
+	}
+
+	public static function getCacheDir() {
+		return getcwd().self::$cacheDir;
+	}
+
+}
